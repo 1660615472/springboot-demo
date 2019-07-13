@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑帖子</title>
+    <STYLE>
+        .row{
+            margin: 0 auto;
+        }
+        .input1{
+            width: 300px;
+            height: 30px;
+        }
+        .textarea{
+            width: 1000px;
+            height: 500px;
+        }
+        .submit{
+           margin-left:880px ;
+            width: 120px;
+            height: 30px;
+        }
+
+
+    </STYLE>
+</head>
+<body>
+<div class="row">
+<form th:action="@{/addMessage}" method="post">
+    <table>
+        <tr>
+            <H1>新增文章</H1>
+        </tr>
+        <tr>
+            <td>文章名:</td>
+            <td><input  type="text" name="title" class="input1"/></td>
+        </tr>
+        <tr>
+            <td>文章内容：</td>
+        </tr>
+
+    </table>
+    <textarea th:cols="100" th:rows="100" th:name="article" class="textarea"></textarea>
+    <table>
+        <tr>
+            <td >
+                <input  type="submit" value="提交" class="submit"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+
+
+</body>
+</html>

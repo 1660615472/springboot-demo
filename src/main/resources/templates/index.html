@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--定义命名空间 namespace-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+   <STYLE>
+       #u1{
+        display: inline;
+       }
+       #u2{
+           display: inline;
+       }
+       h1{
+           margin-left:160px ;
+           font-family:Simsun;
+           font-size: 50px;
+       }
+
+
+       .row1{
+          float: right;
+       }
+
+       *{
+            margin:0px;/* *通配符内边距外边距都设置成0*/
+            padding:0px;
+        }
+       .top{
+           width: 100%;
+           height: 50px;
+           background-color: black;
+
+       }
+       .top_content{/*顶部内容*/
+           width: 75%;
+           height: 50px;
+           margin: 0px auto;/*auto自适应*/
+           background-color:greenyellow;
+       }
+
+
+       .body_img{/*图片*/
+           width: 100%;
+           height: 800px;
+           background-color:darkorange;
+       }
+
+
+       .u {
+           display: inline-block;
+           margin:10px 40px;
+           font-size: 17px;
+       }
+
+       .input1{
+           width: 300px;
+           height: 30px;
+
+       }
+       #u15{
+       text-align:center
+       }
+        #b1+#b2 {
+            display:block;
+            margin:0px  230px;
+        }
+
+
+
+   </STYLE>
+</head>
+<body>
+
+
+<!-- Unnamed (Rectangle) -->
+<div id="u0" class="ax_default box_2">
+    <div id="u0_div" class=""></div>
+    <div id="u0_text" class="text " style="display:none; visibility: hidden">
+        <p></p>
+    </div>
+</div>
+
+<div class="top"><!--网站头部div-->
+    <div class="top_content">
+        <div class="row1">
+            <!-- 登陆 -->
+            <div id="u1" class="text ">
+                <a href="userLogin">登录</a>
+            </div>
+            <!--注册 -->
+            <div id="u2" class="text ">
+                <a href="userRegister">注册</a>
+            </div>
+        </div>
+    </div><!--头部里的小div-->
+</div>
+<DIV class="title">
+    <H1>程序员论坛</H1>
+</DIV>
+
+
+
+    <div class="body_img">
+
+        <!-- Unnamed (Rectangle) -->
+        <div class="u">
+            <span><a href="#">首页</a></span>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div class="u">
+            <span><a href="#">交友</a></span>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div class="u">
+            <span><a href="#">java</a></span>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div class="u">
+            <span><a href="#">Mysql</a></span>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div class="u">
+            <span><a href="#">Spring</a></span>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div class="u">
+            <span><a href="#">Mybatis</a></span>
+        </div>
+
+        <!-- Unnamed (Rectangle) --><div class="u">
+        <span><a href="#">Jquery</a></span>
+    </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div class="u">
+            <span><a href="writeMessage">我要发帖</a></span>
+        </div>
+        <div id="u15">
+            <p><input class="input1">搜索</input></p>
+        </div>
+
+
+        <!--帖子展示区-->
+
+       <!-- <div id="d1">
+            <div  th:object="${title}">
+                <h2 th:text="*{title}"></h2>
+            </div>
+        </div>-->
+
+        <table>
+            <tr>
+
+                <td id="b1"  ><h2>帖子标题</h2> </td>
+                <td id="b2"><h2>作者</h2></td>
+            </tr>
+        </table>
+        <div th:each="message:${allMessageList}">
+
+            <tr>
+                <td id="m1" th:text="${message.title}">&nbsp;</td>
+                <span>-----------------------</span>
+                <td id="m2" th:text="${message.author}">&nbsp;</td>
+            </tr>
+        </div>
+        <br><br>
+    </div>
+
+
+</body>
+</html>
